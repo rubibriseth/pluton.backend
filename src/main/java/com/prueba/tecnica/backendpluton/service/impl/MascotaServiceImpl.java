@@ -16,7 +16,7 @@ public class MascotaServiceImpl implements MascotaService {
 
     @Override
     public List<Mascota> listarMascota() {
-        return mascotaDAO.findAll();
+        return mascotaDAO.getListaMascotaByIndEliminado();
     }
 
     @Override

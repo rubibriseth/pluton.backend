@@ -26,6 +26,9 @@ public class Mascota implements Serializable {
     @Column(name = "peso_mas")
     private String peso;
 
+    @Column(name = "ind_eliminado_mas")
+    private int indEliminado;
+
     public Mascota() {}
 
     public Integer getIdMascota() {
@@ -68,4 +71,11 @@ public class Mascota implements Serializable {
         this.peso = peso;
     }
 
+    public int getIndEliminado() {
+        return indEliminado;
+    }
+
+    public void setIndEliminado(int indEliminado) {
+        this.indEliminado = indEliminado;
+    }
 }

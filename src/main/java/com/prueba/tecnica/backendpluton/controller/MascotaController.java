@@ -70,10 +70,12 @@ public class MascotaController {
     public ResponseEntity<Object> eliminar(@PathVariable int id){
         Map<String, Object> response = new HashMap<>();
         try {
+
             Mascota eliminarMascota = mascotaService.buscarMascotaById(id);
-            mascotaService.eliminarMascota(eliminarMascota);
-            response.put("eliminado", true);
-            return new ResponseEntity<Object>(response,HttpStatus.OK);
+            eliminarMascota.setIndEliminado(1);
+
+            Mascota res = mascotaService.guardarMascota(eliminarMascota);
+            return new ResponseEntity<Object>(res,HttpStatus.OK);
         }
         catch (Exception e) {
             response.put("message", e.getMessage());
